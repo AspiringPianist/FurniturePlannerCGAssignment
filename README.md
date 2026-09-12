@@ -253,6 +253,13 @@ These are documented honestly rather than pretending the project is a full CAD a
 
 Each team member should complete the required AI declaration according to the course rules and state what assistance was used.
 
+### team members
+
+| name | student id |
+| --- | --- |
+| Unnath Chittimalla | IMT2023620 |
+| Anish Teja Bramhajosyula | IMT2024029 |
+
 Team task example:
 
 ```text
