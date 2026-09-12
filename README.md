@@ -10,8 +10,6 @@ Open [index.html](index.html) in a browser.
 
 This README is the only project documentation file. There is no `docs` folder anymore, so there should be no confusion about which notes to read.
 
-The project documentation is organised in the [docs](docs/README.md) folder.
-
 ## Main files
 
 - [index.html](index.html): canvas, HTML controls and GLSL shaders
@@ -253,6 +251,14 @@ These are documented honestly rather than pretending the project is a full CAD a
 
 Each team member should complete the required AI declaration according to the course rules and state what assistance was used.
 
+### ai usage consent pdf
+
+the completed pdf is included in the repository root with this filename:
+
+[ai usage consent form](CSE606-T1-26-27-AI-Disclosure-Statement.pdf)
+
+this is the ai disclosure statement submitted for the project.
+
 ### team members
 
 | name | student id |
@@ -260,13 +266,35 @@ Each team member should complete the required AI declaration according to the co
 | Unnath Chittimalla | IMT2023620 |
 | Anish Teja Bramhajosyula | IMT2024029 |
 
-Team task example:
+### tasks completed by each team member
 
-```text
-Member 1: WebGL setup, shaders, matrices and geometry
-Member 2: UI, mouse/keyboard interaction and save/retrieve
-Member 3: testing, documentation and presentation
-```
+| team member | tasks completed |
+| --- | --- |
+| Unnath Chittimalla | |
+| Anish Teja Bramhajosyula | |
+
+## submission deliverables
+
+### code
+
+the complete source code is in this repository:
+
+- [index.html](index.html)
+- [main.js](main.js)
+- [style.css](style.css)
+- [gl-matrix-min.js](gl-matrix-min.js)
+
+### functionality video
+
+the video link is stored in [video-link.txt](video-link.txt). it currently points to the shared google drive folder:
+
+[open video google drive folder](https://drive.google.com/drive/folders/1T_6WIEuTyAWsGGFzmsqmGnWIxMpRB66Z?usp=sharing)
+
+the video should explain the full functionality: room layout, furniture spawning, selection, dragging, yellow held hitbox, rotation, scaling, randomization, labels, saving and retrieving.
+
+### written report
+
+this readme is the written report. it includes the strategies used, methods that worked, methods that did not work at first, user interactions, local and global coordinates, future features, team information, the empty team task table, ai consent pdf placeholder and exact learning source links.
 
 ## doubts we solved while building it
 
