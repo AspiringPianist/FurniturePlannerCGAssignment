@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Furniture Layout Planner - Unnath and Teammate</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div id="roomCanvas">
+            <!-- the canvas is only the drawing surface; the guide controls are html. -->
+            <canvas id="glCanvas" width="800" height="800"></canvas>
+            <div id="roomLabels">
+                <span class="livingLabel">Living area</span>
+                <span class="bedroomLabel">Bedroom</span>
+                <span class="diningLabel">Kitchen &amp; dining</span>
+                <span class="kitchenLabel">Bathroom</span>
+                <span class="entryLabel">Entry hall</span>
+            </div>
+        </div>
+        <aside id="sidebar">
+            <h2>Planner guide</h2>
+            <p>Plan mode: drag furniture with the mouse. Press R to rotate, + to enlarge, - to shrink, and L to randomize.</p>
+            <div id="controls">
+                <label>Mode:
+                    <select id="modeSelect">
+                        <option value="plan">Plan</option>
+                        <option value="save">Save</option>
+                        <option value="retrieve">Retrieve</option>
+                    </select>
+                </label>
+                <input id="planName" type="text" placeholder="Plan name">
+                <button id="savePlan" type="button">Save plan</button>
+                <select id="savedPlans">
+                    <option value="">Choose saved plan</option>
+                </select>
+                <button id="loadPlan" type="button">Load plan</button>
+                <button id="randomizeButton" type="button">Randomize layout</button>
+            </div>
+            <button id="hitboxToggle" type="button">Show hitboxes</button>
+            <div id="spawnPanel">
+                <button data-type="bed" type="button">Add Bed</button>
+                <button data-type="sofa" type="button">Add Sofa</button>
+                <button data-type="diningTable" type="button">Add Dining Table</button>
+                <button data-type="coffeeTable" type="button">Add Coffee Table</button>
+                <button data-type="sectional" type="button">Add Sectional</button>
+                <button data-type="door" type="button">Add Doorway</button>
+            </div>
+            <div id="objectInfo">
+                <p id="selectionText">No object selected</p>
+                <input id="labelInput" type="text" placeholder="Furniture label">
+                <button id="assignLabel" type="button">Assign label</button>
+            </div>
+        </aside>
+        <!-- vertex shader runs on the gpu. javascript sends attributes and uniforms into it. -->
+         <script id="vertex-shader" type="notjs">
+            attribute vec2 a_position;
+            uniform mat4 u_matrix;
+            uniform mat4 u_projection;
+
+            void main() {
+                gl_Position = u_projection*u_matrix*vec4(a_position, 0.0, 1.0);
+                //gl_pointsize = 20.0;
+            }
+         </script>
+
+         <script id="fragment-shader" type="notjs">
+            precision mediump float;
+            uniform vec4 u_color;
+
+            void main() {
+                gl_FragColor = u_color;
+            }
+         </script>
+         <script src="gl-matrix-min.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>

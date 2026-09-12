@@ -1,0 +1,84 @@
+body {
+	font-family: sans-serif;
+	display: flex;
+	gap: 20px;
+	align-items: flex-start;
+	margin: 16px;
+}
+
+#sidebar {
+	width: 280px;
+	padding: 16px;
+	border: 1px solid #bbb;
+	background: #f7f7f7;
+}
+
+#sidebar h2 {
+	margin-top: 0;
+}
+
+#sidebar p {
+	line-height: 1.4;
+}
+
+#controls,
+#spawnPanel,
+#objectInfo {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	flex-wrap: wrap;
+	margin: 12px 0;
+	flex-direction: column;
+	align-items: stretch;
+}
+
+#roomCanvas {
+	position: relative;
+	width: 800px;
+	max-width: calc(100vw - 340px);
+}
+
+#glCanvas {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+#roomLabels {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+	color: #555;
+	font-size: 18px;
+}
+
+#roomLabels span {
+	position: absolute;
+	padding: 4px 6px;
+	background: rgba(255, 255, 255, 0.75);
+	font-weight: bold;
+	text-shadow: 0 1px 2px white;
+}
+
+.livingLabel { left: 20%; top: 62%; }
+.bedroomLabel { left: 65%; top: 68%; }
+.diningLabel { left: 20%; top: 17%; }
+.kitchenLabel { left: 68%; top: 17%; }
+.entryLabel { left: 48%; top: 46%; }
+
+@media (max-width: 900px) {
+	body {
+		flex-direction: column;
+	}
+
+	#roomCanvas {
+		max-width: 100%;
+		order: 1;
+	}
+
+	#sidebar {
+		width: auto;
+		order: 2;
+	}
+}
