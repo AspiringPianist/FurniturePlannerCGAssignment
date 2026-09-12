@@ -363,7 +363,3 @@ the coffee table uses a center point and circle points with `gl.triangle_fan`. t
 ### what room layout are we matching?
 
 the layout is an approximate version of the supplied floor plan: kitchen and dining top-left, bathroom top-right, living area bottom-left, bedroom bottom-right and entry hall near the middle. appliances, fixtures, windows and balcony details are left out because they were not required.
-
-### why are there spelling mistakes in the comments?
-
-the comments are written as a human learning diary. some mistakes such as `trnaslation`, `colum`, `bufffer` and `projetion` are kept on purpose. executable code and shader statements must still keep their exact spelling, because a spelling mistake there would break the program.
