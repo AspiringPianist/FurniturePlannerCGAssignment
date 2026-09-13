@@ -8,7 +8,46 @@ The project uses vanilla JavaScript, WebGL, HTML/CSS and gl-matrix. It does not 
 
 Open [index.html](index.html) in a browser.
 
-This README is the only project documentation file. There is no `docs` folder anymore, so there should be no confusion about which notes to read.
+The application is a static WebGL project, so no development server is required for local use.
+
+### Run locally
+
+1. Clone or download the repository.
+2. Open [index.html](index.html) directly in a modern browser.
+3. If the browser blocks local files, start a simple local server from the project folder:
+
+```powershell
+py -m http.server 8000
+```
+
+Then open <http://localhost:8000>.
+
+### Generate the API documentation
+
+The JSDoc configuration is in [jsdoc.json](jsdoc.json). Generate the HTML documentation with:
+
+```powershell
+npx --yes jsdoc -c jsdoc.json
+```
+
+The generated site is written to [docs/jsdoc/index.html](docs/jsdoc/index.html).
+
+The documentation source is the JSDoc comments in [main.js](main.js). Regenerate the site after changing those comments.
+
+### Publish the JSDoc site on GitHub Pages
+
+The workflow in [.github/workflows/jsdoc-pages.yml](.github/workflows/jsdoc-pages.yml) regenerates and publishes the JSDoc site whenever `main.js` or `jsdoc.json` changes on `main`.
+
+To enable it in GitHub:
+
+1. Push the repository, including the workflow file.
+2. Open the repository's **Settings**, then **Pages**.
+3. Under **Build and deployment**, choose **GitHub Actions** as the source.
+4. Wait for the `Publish JSDoc` workflow to finish.
+
+The published site will be available at:
+
+<https://aspiringpianist.github.io/FurniturePlannerCGAssignment/>
 
 ## Main files
 
@@ -16,8 +55,9 @@ This README is the only project documentation file. There is no `docs` folder an
 - [main.js](main.js): WebGL, geometry, matrices, interaction and saving
 - [style.css](style.css): right hand control panel and room labels
 - [gl-matrix-min.js](gl-matrix-min.js): matrix maths library
-
-This `README.md` is the single documentation file for the project.
+- [jsdoc.json](jsdoc.json): JSDoc generation configuration
+- [docs/jsdoc/index.html](docs/jsdoc/index.html): generated API documentation
+- [.github/workflows/jsdoc-pages.yml](.github/workflows/jsdoc-pages.yml): GitHub Pages deployment workflow
 
 ## Sources used
 
@@ -264,14 +304,12 @@ this is the ai disclosure statement submitted for the project.
 | name | student id |
 | --- | --- |
 | Unnath Chittimalla | IMT2023620 |
-| Anish Teja Bramhajosyula | IMT2024029 |
 
 ### tasks completed by each team member
 
 | team member | tasks completed |
 | --- | --- |
 | Unnath Chittimalla | |
-| Anish Teja Bramhajosyula | |
 
 ## submission deliverables
 
